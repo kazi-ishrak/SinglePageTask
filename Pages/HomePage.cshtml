@@ -1,5 +1,130 @@
 ﻿@page
 @model SinglePageTask.Pages.HomePageModel
 @{
-    
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeting Minutes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-4 ">
+        <h3 class="mb-4">Meeting Minutes</h3>
+
+        <div class="mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="MeetingType" id="Corporate" value="Corporate" checked>
+                <label class="form-check-label" for="Corporate">Corporate</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="MeetingType" id="Individual" value="Individual">
+                <label class="form-check-label" for="Individual">Individual</label>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="CustomerName" class="form-label">Customer Name*</label>
+                <select id="CustomerName" class="form-select">
+                    <option value="">Select customer name</option>
+                    <!-- Add options here -->
+                </select>
+                <div class="row">
+                    <div class="col">
+                        <label for="Date" class="form-label">Date*</label>
+                        <input type="date" id="Date" class="form-control" />
+                    </div>
+                    <div class="col ">
+                        <label for="Time" class="form-label">Time*</label>
+                        <input type="time" id="Time" class="form-control" value="09:00" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="MeetingAgenda" class="form-label">Meeting Agenda*</label>
+                <textarea id="MeetingAgenda" class="form-control" rows="2" placeholder="Meeting agenda"></textarea>
+            </div>
+            
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="MeetingPlace" class="form-label">Meeting Place*</label>
+            <input type="text" id="MeetingPlace" class="form-control" placeholder="Meeting place" />
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="AttendsFromClient" class="form-label">Attends From Client Side*</label>
+                <textarea id="AttendsFromClient" class="form-control" rows="2" placeholder="Present client side"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="AttendsFromHost" class="form-label">Attends From Host Side*</label>
+                <textarea id="AttendsFromHost" class="form-control" rows="2" placeholder="Present self side"></textarea>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+
+            <div class="col-md-4">
+                <label for="MeetingDiscussion" class="form-label">Meeting Discussion*</label>
+                <textarea id="MeetingDiscussion" class="form-control" rows="2" placeholder="Meeting discussion"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="MeetingDecision" class="form-label">Meeting Decision*</label>
+                <textarea id="MeetingDecision" class="form-control" rows="2" placeholder="Meeting decision"></textarea>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-5">
+                <label for="InterestedProduct" class="form-label">Interested Product/Service</label>
+                <select id="InterestedProduct" class="form-select">
+                    <option value="">Select product/service interested</option>
+                    <!-- Add options here -->
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="Quantity" class="form-label">Quantity</label>
+                <input type="number" id="Quantity" class="form-control" placeholder="Quantity" />
+            </div>
+            <div class="col-md-3">
+                <label for="Unit" class="form-label">Unit</label>
+                <input type="text" id="Unit" class="form-control" placeholder="Unit" />
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary mb-3" onclick="addItem()">Add</button>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>SL#</th>
+                    <th>Interested Product/Service Name</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr>
+                    <td colspan="6" class="text-center">No matching records found</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success me-2">Save</button>
+            <button type="reset" class="btn btn-secondary">Refresh</button>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
