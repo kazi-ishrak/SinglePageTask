@@ -9,121 +9,204 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeting Minutes</title>
+    <link href="~/css/homepage.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container mt-4 ">
-        <h3 class="mb-4">Meeting Minutes</h3>
+    <div class="container-fluid" id="whole-body">
+        <div id="group1"> 
+            <div class="container">
 
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="MeetingType" id="Corporate" value="Corporate" checked>
-                <label class="form-check-label" for="Corporate">Corporate</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="MeetingType" id="Individual" value="Individual">
-                <label class="form-check-label" for="Individual">Individual</label>
-            </div>
-        </div>
+                <h3 class="mb-4">Meeting Minutes</h3>
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="CustomerName" class="form-label">Customer Name*</label>
-                <select id="CustomerName" class="form-select">
-                    <option value="">Select customer name</option>
-                    <!-- Add options here -->
-                </select>
-                <div class="row">
-                    <div class="col">
-                        <label for="Date" class="form-label">Date*</label>
-                        <input type="date" id="Date" class="form-control" />
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="MeetingType" id="Corporate" value="Corporate" checked>
+                        <label class="form-check-label" for="Corporate">Corporate</label>
                     </div>
-                    <div class="col ">
-                        <label for="Time" class="form-label">Time*</label>
-                        <input type="time" id="Time" class="form-control" value="09:00" />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="MeetingType" id="Individual" value="Individual">
+                        <label class="form-check-label" for="Individual">Individual</label>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6">
-                <label for="MeetingAgenda" class="form-label">Meeting Agenda*</label>
-                <textarea id="MeetingAgenda" class="form-control" rows="2" placeholder="Meeting agenda"></textarea>
+                <div class="row mb-1">
+                    <div class="col-6">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-3 d-flex">
+                                <label for="CustomerName" class="form-label">Customer Name*</label>
+                            </div>
+                            <div class="col-9 d-flex">
+                                <select id="CustomerName" class="form-select">
+                                    <option value="">Select customer name</option>
+                                    <!-- Add options here -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 d-flex align-items-center">
+                            <div class="col-3">
+                                <label for="Date" class="form-label">Date*</label>
+                            </div>
+                            <div class="col-3">
+                                <input type="date" id="Date" class="form-control" />
+                            </div>
+                            <div class="col-3">
+                                <label for="Time" class="form-label">Time*</label>
+                            </div>
+                            <div class="col-3">
+                                <input type="time" id="Time" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 d-flex ">
+                        <div class="col-3">
+                            <label for="MeetingAgenda" class="form-label">Meeting Agenda*</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="MeetingAgenda" class="form-control" rows="2" placeholder="Meeting agenda"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 d-flex">
+                        <div class="col-3 ">
+                            <label for="MeetingPlace" class="form-label">Meeting Place*</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" id="MeetingPlace" class="form-control" placeholder="Meeting place" />
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex">
+                        <div class="col-3">
+                            <label for="MeetingDiscussion" class="form-label">Meeting Discussion*</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="MeetingDiscussion" class="form-control" rows="2" placeholder="Meeting discussion"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3 mt-1">
+                    <div class="col-md-6 d-flex">
+                        <div class="col-3">
+                            <label for="AttendsFromClient" class="form-label">Attends From Client Side*</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="AttendsFromClient" class="form-control" rows="2" placeholder="Present client side"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex">
+                        <div class="col-3">
+                            <label for="MeetingDecision" class="form-label">Meeting Decision*</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="MeetingDecision" class="form-control" rows="2" placeholder="Meeting decision"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mt-1">
+                    <div class="col-md-6 d-flex">
+                        <div class="col-3">
+                            <label for="AttendsFromHost" class="form-label">Attends From Host Side*</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="AttendsFromHost" class="form-control" rows="2" placeholder="Present self side"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="group2" class="mb-3">
+                    <div class="row mt-1">
+                        <div class="col-6 d-flex">
+                            <div class="col-4">
+                                <label for="InterestedProduct" class="form-label">Interested Product/Service</label>
+                            </div>
+                            <div class="col-8">
+                                <select id="InterestedProduct" class="form-select">
+                                    <option value="">Select product/service interested</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-3 d-flex">
+                            <div class="col-4">
+                                <label for="Quantity" class="form-label">Quantity</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" id="Quantity" class="form-control" placeholder="Quantity" />
+                            </div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="col-4">
+                                <label for="Unit" class="form-label">Unit</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="Unit" class="form-control" placeholder="Unit" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary btn-sm mt-1 mb-3" onclick="" style="color:black">
+                        <span> <i class="fa fa-plus" aria-hidden="true"></i> </span>
+                        Add
+                    </button>
+                </div>
+
+                <div id="group3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>SL#</th>
+                                <th>Interested Product/Service Name</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTable">
+                            <tr>
+                                <td colspan="6" class="text-center">No matching records found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-sm mt-1 mb-3" onclick="" style="color:black">
+                            <span> <i class="fa fa-save" aria-hidden="true"></i> </span>
+                            Save
+                        </button>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btn-sm mt-1 mb-3" onclick="" style="color:black">
+                            <span> <i class="fa fa-refresh" aria-hidden="true"></i> </span>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+
             </div>
-            
         </div>
         
-        
-        <div class="mb-3">
-            <label for="MeetingPlace" class="form-label">Meeting Place*</label>
-            <input type="text" id="MeetingPlace" class="form-control" placeholder="Meeting place" />
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="AttendsFromClient" class="form-label">Attends From Client Side*</label>
-                <textarea id="AttendsFromClient" class="form-control" rows="2" placeholder="Present client side"></textarea>
-            </div>
-            <div class="col-md-6">
-                <label for="AttendsFromHost" class="form-label">Attends From Host Side*</label>
-                <textarea id="AttendsFromHost" class="form-control" rows="2" placeholder="Present self side"></textarea>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-
-            <div class="col-md-4">
-                <label for="MeetingDiscussion" class="form-label">Meeting Discussion*</label>
-                <textarea id="MeetingDiscussion" class="form-control" rows="2" placeholder="Meeting discussion"></textarea>
-            </div>
-            <div class="col-md-4">
-                <label for="MeetingDecision" class="form-label">Meeting Decision*</label>
-                <textarea id="MeetingDecision" class="form-control" rows="2" placeholder="Meeting decision"></textarea>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-5">
-                <label for="InterestedProduct" class="form-label">Interested Product/Service</label>
-                <select id="InterestedProduct" class="form-select">
-                    <option value="">Select product/service interested</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="Quantity" class="form-label">Quantity</label>
-                <input type="number" id="Quantity" class="form-control" placeholder="Quantity" />
-            </div>
-            <div class="col-md-3">
-                <label for="Unit" class="form-label">Unit</label>
-                <input type="text" id="Unit" class="form-control" placeholder="Unit" />
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary mb-3" onclick="addItem()">Add</button>
-
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>SL#</th>
-                    <th>Interested Product/Service Name</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody id="productTable">
-                <tr>
-                    <td colspan="6" class="text-center">No matching records found</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-success me-2">Save</button>
-            <button type="reset" class="btn btn-secondary">Refresh</button>
-        </div>
-
     </div>
+    
 
 
 </body>
